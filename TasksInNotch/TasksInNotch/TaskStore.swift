@@ -71,6 +71,6 @@ final class TaskStore {
     }
 
     func report(_ error: Error) {
-        errorMessage = "Не удалось сохранить изменения. \(error.localizedDescription)"
+        errorMessage = error.localizedDescription
     }
 }

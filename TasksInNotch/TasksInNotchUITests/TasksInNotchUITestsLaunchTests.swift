@@ -1,13 +1,13 @@
 //
-//  NotchTasksUITestsLaunchTests.swift
-//  NotchTasksUITests
+//  TasksInNotchUITestsLaunchTests.swift
+//  TasksInNotchUITests
 //
 //  Created by Andrey Onischenko on 03.10.2026.
 //
 
 import XCTest
 
-final class NotchTasksUITestsLaunchTests: XCTestCase {
+final class TasksInNotchUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

@@ -1,6 +1,6 @@
 //
-//  NotchTasksTests.swift
-//  NotchTasksTests
+//  TasksInNotchTests.swift
+//  TasksInNotchTests
 //
 //  Created by Andrey Onischenko on 03.10.2026.
 //
@@ -8,10 +8,10 @@
 import Testing
 import Foundation
 import SwiftData
-@testable import NotchTasks
+@testable import TasksInNotch
 
 @MainActor
-struct NotchTasksTests {
+struct TasksInNotchTests {
     @Test func completionKeepsTheTotalAndSeparatesDays() throws {
         let store = try makeStore()
         let today = Date()

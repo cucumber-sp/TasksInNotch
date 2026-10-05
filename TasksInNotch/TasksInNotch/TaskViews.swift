@@ -9,6 +9,8 @@ enum TaskAppearance {
 
 struct CompactCountView: View {
     let store: TaskStore
+    let hover: NotchHoverState
+    let language: LanguageSettings
 
     var body: some View {
         TimelineView(.periodic(from: .now, by: 30)) { timeline in
@@ -16,13 +18,20 @@ struct CompactCountView: View {
                 .font(.system(size: 12, weight: .medium, design: .rounded))
                 .monospacedDigit()
                 .frame(width: 38)
-                .accessibilityLabel("Задачи на сегодня: \(store.progress(on: timeline.date).label)")
+                .accessibilityLabel(language.format("Today's tasks: %@", store.progress(on: timeline.date).label))
         }
+        .frame(width: hover.isHovering ? 38 : 0)
+        .opacity(hover.isHovering ? 1 : 0)
+        .clipped()
+        .accessibilityHidden(!hover.isHovering)
+        .animation(.snappy(duration: 0.4), value: hover.isHovering)
     }
 }
 
 struct CompactProgressView: View {
     let store: TaskStore
+    let hover: NotchHoverState
+    let language: LanguageSettings
 
     var body: some View {
         TimelineView(.periodic(from: .now, by: 30)) { timeline in
@@ -37,13 +46,19 @@ struct CompactProgressView: View {
             .frame(width: 16, height: 16)
             .frame(width: 38)
             .animation(.easeInOut(duration: 0.2), value: progress.fraction)
-            .accessibilityLabel("Выполнено \(Int(progress.fraction * 100)) процентов")
+            .accessibilityLabel(language.format("Completed %lld percent", Int(progress.fraction * 100)))
         }
+        .frame(width: hover.isHovering ? 38 : 0)
+        .opacity(hover.isHovering ? 1 : 0)
+        .clipped()
+        .accessibilityHidden(!hover.isHovering)
+        .animation(.snappy(duration: 0.4), value: hover.isHovering)
     }
 }
 
-struct NotchTasksView: View {
+struct TasksInNotchView: View {
     let store: TaskStore
+    let language: LanguageSettings
     let showHistory: () -> Void
 
     var body: some View {
@@ -52,7 +67,7 @@ struct NotchTasksView: View {
             let pending = store.pendingTasks(on: day)
             VStack(spacing: 12) {
                 HStack(spacing: 8) {
-                    Text("Мои задачи").font(.system(size: 14, weight: .medium))
+                    Text(language.text("My Tasks")).font(.system(size: 14, weight: .medium))
                     Text(store.progress(on: day).label)
                         .font(.system(size: 12))
                         .monospacedDigit()
@@ -67,8 +82,8 @@ struct NotchTasksView: View {
                             .contentShape(Rectangle())
                     }
                     .buttonStyle(.plain)
-                    .help("Все задачи по датам")
-                    .accessibilityLabel("Все задачи по датам")
+                    .help(language.text("All tasks by date"))
+                    .accessibilityLabel(language.text("All tasks by date"))
                 }
                 .frame(height: 30)
 
@@ -77,7 +92,7 @@ struct NotchTasksView: View {
                         Image(systemName: "checkmark.circle")
                             .font(.system(size: 24, weight: .light))
                             .foregroundStyle(TaskAppearance.accent)
-                        Text("Все задачи на сегодня выполнены")
+                        Text(language.text("All tasks for today are complete"))
                             .font(.system(size: 13))
                             .foregroundStyle(.secondary)
                     }
@@ -87,7 +102,7 @@ struct NotchTasksView: View {
                     ScrollView {
                         LazyVStack(spacing: 0) {
                             ForEach(pending) { task in
-                                TaskRow(task: task, store: store)
+                                TaskRow(task: task, store: store, language: language)
                             }
                         }
                     }
@@ -95,20 +110,21 @@ struct NotchTasksView: View {
                     .frame(height: TaskAppearance.listHeight)
                 }
 
-                TaskInputView(store: store, day: day)
+                TaskInputView(store: store, day: day, language: language)
             }
             .padding(.horizontal, 5)
             .frame(width: TaskAppearance.panelWidth)
-            .environment(\.locale, Locale(identifier: "ru_RU"))
+            .environment(\.locale, language.locale)
             .preferredColorScheme(.dark)
         }
-        .taskStorageAlert(store: store)
+        .taskStorageAlert(store: store, language: language)
     }
 }
 
 struct TaskRow: View {
     let task: TodoTask
     let store: TaskStore
+    let language: LanguageSettings
 
     var body: some View {
         Button {
@@ -133,9 +149,9 @@ struct TaskRow: View {
         .buttonStyle(.plain)
         .help(task.title)
         .accessibilityLabel(task.title)
-        .accessibilityValue(task.isCompleted ? "Выполнена" : "Не выполнена")
+        .accessibilityValue(language.text(task.isCompleted ? "Completed" : "Not completed"))
         .contextMenu {
-            Button("Удалить задачу", role: .destructive) {
+            Button(language.text("Delete task"), role: .destructive) {
                 do { try store.deleteTask(task) }
                 catch { store.report(error) }
             }
@@ -146,6 +162,7 @@ struct TaskRow: View {
 struct TaskInputView: View {
     let store: TaskStore
     let day: Date
+    let language: LanguageSettings
     @State private var title = ""
     @FocusState private var isFocused: Bool
 
@@ -153,12 +170,12 @@ struct TaskInputView: View {
 
     var body: some View {
         HStack(spacing: 6) {
-            TextField("Новая задача", text: $title)
+            TextField(language.text("New task"), text: $title)
                 .textFieldStyle(.plain)
                 .font(.system(size: 13))
                 .focused($isFocused)
                 .onSubmit(addTask)
-                .accessibilityLabel("Новая задача")
+                .accessibilityLabel(language.text("New task"))
             Button(action: addTask) {
                 Image(systemName: "plus")
                     .font(.system(size: 16))
@@ -167,7 +184,7 @@ struct TaskInputView: View {
             }
             .buttonStyle(.plain)
             .disabled(!canAdd)
-            .accessibilityLabel("Добавить задачу")
+            .accessibilityLabel(language.text("Add task"))
         }
         .padding(.leading, 12)
         .padding(.trailing, 6)
@@ -187,21 +204,22 @@ struct TaskInputView: View {
 
 private struct TaskStorageAlert: ViewModifier {
     @Bindable var store: TaskStore
+    let language: LanguageSettings
 
     func body(content: Content) -> some View {
-        content.alert("Ошибка сохранения", isPresented: Binding(
+        content.alert(language.text("Unable to save changes"), isPresented: Binding(
             get: { store.errorMessage != nil },
             set: { if !$0 { store.errorMessage = nil } }
         )) {
-            Button("Понятно") { store.errorMessage = nil }
+            Button(language.text("OK")) { store.errorMessage = nil }
         } message: {
-            Text(store.errorMessage ?? "")
+            Text(language.text("Your changes could not be saved.") + "\n" + (store.errorMessage ?? ""))
         }
     }
 }
 
 extension View {
-    func taskStorageAlert(store: TaskStore) -> some View {
-        modifier(TaskStorageAlert(store: store))
+    func taskStorageAlert(store: TaskStore, language: LanguageSettings) -> some View {
+        modifier(TaskStorageAlert(store: store, language: language))
     }
 }

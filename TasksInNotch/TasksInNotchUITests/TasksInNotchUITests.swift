@@ -1,13 +1,13 @@
 //
-//  NotchTasksUITests.swift
-//  NotchTasksUITests
+//  TasksInNotchUITests.swift
+//  TasksInNotchUITests
 //
 //  Created by Andrey Onischenko on 03.10.2026.
 //
 
 import XCTest
 
-final class NotchTasksUITests: XCTestCase {
+final class TasksInNotchUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

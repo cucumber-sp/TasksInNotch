@@ -1,0 +1,24 @@
+/* TasksInNotch interface strings. */
+"Today's tasks" = "Задачи на сегодня";
+"All tasks by date" = "Все задачи по датам";
+"Language" = "Язык";
+"Quit TasksInNotch" = "Выйти из TasksInNotch";
+"My Tasks" = "Мои задачи";
+"All tasks for today are complete" = "Все задачи на сегодня выполнены";
+"Completed" = "Выполнена";
+"Not completed" = "Не выполнена";
+"Delete task" = "Удалить задачу";
+"New task" = "Новая задача";
+"Add task" = "Добавить задачу";
+"Unable to save changes" = "Ошибка сохранения";
+"OK" = "Понятно";
+"Your changes could not be saved." = "Не удалось сохранить изменения.";
+"Previous day" = "Предыдущий день";
+"Task date" = "Дата задач";
+"Next day" = "Следующий день";
+"Today" = "Сегодня";
+"No tasks for this date" = "На эту дату задач нет";
+"Unable to open tasks" = "Не удалось открыть задачи";
+"Quit" = "Закрыть приложение";
+"Today's tasks: %@" = "Задачи на сегодня: %@";
+"Completed %lld percent" = "Выполнено %lld процентов";

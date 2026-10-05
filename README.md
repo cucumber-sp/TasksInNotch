@@ -1,116 +1,114 @@
-# Notch Tasks
+# TasksInNotch
 
-Нативный таск-трекер для macOS, который живёт рядом с вырезом экрана MacBook.
-Однострочные задачи на день, счётчик выполнения и история по датам.
+[English](README.md) | [Русский](README.ru.md)
 
-Интерфейс написан на SwiftUI, задачи сохраняются локально в SwiftData.
-[DynamicNotchKit](https://github.com/MrKai77/DynamicNotchKit) отвечает за
-форму панели, расположение у выреза и анимации. Версия библиотеки закреплена на **1.1.0**.
+A native macOS task tracker in your MacBook's notch. Keep a simple daily to-do list,
+check your progress on hover, and browse completed tasks by date.
 
-## Как это работает
+Built with SwiftUI and SwiftData. [DynamicNotchKit](https://github.com/MrKai77/DynamicNotchKit)
+provides the panel geometry, positioning, and animations. The dependency is pinned to **1.1.0**.
 
-- **Свёрнутая панель:** слева — выполненные / все задачи на сегодня, справа — кольцо прогресса.
-- **Наведение:** штатное небольшое увеличение панели, без раскрытия списка и перехвата клавиатуры.
-- **Клик в верхней области notch:** раскрывает или сворачивает список. При раскрытии поле ввода получает фокус.
-- **Потеря фокуса или клик снаружи:** сворачивает панель.
-- **Список:** показывает невыполненные задачи. Высота фиксирована на шесть строк, дальше — прокрутка.
-- **Выполнение:** нажми на строку задачи. Она исчезнет из текущего списка, но останется в истории.
-- **Добавление:** введи название и нажми **Return** или **+**. Пустые строки игнорируются.
-- **История:** кнопка календаря открывает отдельное окно со всеми задачами выбранного дня,
-  включая выполненные. Дату можно выбрать в календаре или переключить стрелками.
-- **Удаление:** доступно в контекстном меню строки.
+## Interaction
 
-Когда невыполненных задач на сегодня нет, панель показывает «Все задачи на сегодня выполнены».
-Задачи остаются на назначенной дате: автоматического переноса на следующий день нет.
+- **At rest:** the task counter and progress ring are hidden, and their content width collapses.
+- **Hover:** the kit's native enlargement reveals completed / total tasks on the left and a progress ring on the right.
+  Hovering does not open the list or take keyboard focus.
+- **Click the top of the notch:** toggle the task list. Opening the panel focuses the input field.
+- **Click outside or switch apps:** collapse the panel.
+- **Task list:** unfinished tasks for today, with a fixed height of six rows and scrolling for more.
+- **Complete a task:** click its row. Completed tasks remain in history and can be marked unfinished again.
+- **Add a task:** enter a single-line title and press **Return** or **+**. Blank input is ignored.
+- **History:** the calendar button opens all tasks for the selected date. Use the date field or arrows to switch days.
+- **Delete a task:** use its context menu.
 
-Приложение работает без иконки в Dock. Меню с иконкой списка задач в строке меню
-позволяет открыть панель, историю или завершить приложение. На экране без выреза
-используется floating-режим DynamicNotchKit.
+With no unfinished tasks, the panel shows “All tasks for today are complete.” Tasks stay on their assigned dates;
+unfinished tasks do not automatically move to the next day.
 
-## Требования
+The app runs without a Dock icon. Its menu bar menu opens tasks and history, selects a language, and quits the app.
+Displays without a notch use the kit's floating panel, opened from the menu.
 
-- **macOS 14+** для приложения.
-- **Xcode 26+** для сборки текущего проекта.
-- MacBook с вырезом для интерфейса вокруг notch; на остальных экранах доступна плавающая панель.
+## Languages
 
-Проверено на Apple Silicon с Xcode 26.6 и macOS 26.6.2.
-Интерфейс текущей версии — на русском языке.
+**English** is the default. Select **Language → Русский** in the app's menu bar menu to switch to Russian.
+The preference is saved and updates views, controls, dates, and accessibility labels. Task titles stay as entered.
 
-## Запуск через Xcode
+## Requirements
+
+- **macOS 14+** to run the app.
+- **Xcode 26+** to build the current project.
+- A MacBook with a notch for the notch interface; other displays use a floating panel.
+
+Verified on Apple Silicon with Xcode 26.6 and macOS 26.6.2. Release builds include Apple Silicon and Intel.
+
+## Run in Xcode
 
 ```sh
-git clone https://github.com/cucumber-sp/notch-task-tracker.git
-cd notch-task-tracker
-open NotchTasks/NotchTasks.xcodeproj
+git clone https://github.com/cucumber-sp/TasksInNotch.git
+cd TasksInNotch
+open TasksInNotch/TasksInNotch.xcodeproj
 ```
 
-1. Дождись загрузки Swift Package Dependencies.
-2. Выбери схему **NotchTasks** и устройство **My Mac**.
-3. В **Signing & Capabilities** укажи свою команду разработчика вместо команды из проекта.
-4. Нажми **⌘R**.
+1. Wait for Swift Package Dependencies to resolve.
+2. Select the **TasksInNotch** scheme and **My Mac**.
+3. Select your own development team under **Signing & Capabilities**.
+4. Press **⌘R**, then hover over or click the notch.
 
-После запуска счётчик появится рядом с вырезом. Нажми на верхнюю область панели,
-чтобы добавить первую задачу.
+### Release build
 
-### Сборка из терминала
-
-Для локальной сборки с ad hoc-подписью:
+For a local Release build with an ad hoc signature:
 
 ```sh
 xcodebuild \
-  -project NotchTasks/NotchTasks.xcodeproj \
-  -scheme NotchTasks \
-  -configuration Debug \
-  -destination 'platform=macOS' \
+  -project TasksInNotch/TasksInNotch.xcodeproj \
+  -scheme TasksInNotch \
+  -configuration Release \
+  -destination 'generic/platform=macOS' \
   -derivedDataPath .build/xcode \
   build CODE_SIGN_IDENTITY=- CODE_SIGNING_ALLOWED=YES
 ```
 
-Приложение появится в `.build/xcode/Build/Products/Debug/NotchTasks.app`.
+Copy `.build/xcode/Build/Products/Release/TasksInNotch.app` to `/Applications` to run it without Xcode.
 
-## Хранение данных
+## Local storage
 
-Задачи сохраняются в локальном хранилище SwiftData в контейнере приложения.
-Каждое добавление, изменение статуса и удаление сохраняется сразу.
-CloudKit отключён; аккаунт и сервер для работы приложения не требуются.
+SwiftData stores tasks in the app's local container. Each addition, completion change, and deletion is saved
+immediately. CloudKit is disabled; no account or server is required.
 
-Дата задачи хранится как календарный день. Счётчик учитывает и выполненные,
-и невыполненные задачи этого дня. В истории задачу можно вернуть в невыполненные.
+Dates are calendar days; progress includes completed and unfinished tasks. The original bundle identifier,
+`com.cucumberspace.NotchTasks`, is retained so renaming the app preserves the existing data container.
 
-## Структура проекта
+## Project structure
 
-| Файл | Назначение |
+Sources are under `TasksInNotch/TasksInNotch/`.
+
+| File | Purpose |
 | --- | --- |
-| `NotchTasksApp.swift` | Точка входа и меню в строке меню macOS |
-| `AppDelegate.swift` | Запуск приложения, хранилище и окно истории |
-| `NotchController.swift` | Клики, фокус и подключение DynamicNotchKit |
-| `TaskViews.swift` | Счётчик, прогресс, список и поле ввода |
-| `HistoryView.swift` | Все задачи и переключение дат |
-| `TaskStore.swift` | Добавление, выполнение, удаление и сохранение |
-| `TodoTask.swift` | Модель задачи и расчёт прогресса |
+| `TasksInNotchApp.swift` | App entry point and menu bar menu |
+| `AppDelegate.swift` | App lifecycle, storage, and history window |
+| `NotchController.swift` | Clicks, keyboard focus, and the kit's hover state |
+| `TaskViews.swift` | Counter, progress ring, list, and input |
+| `HistoryView.swift` | All tasks and date navigation |
+| `AppLanguage.swift` | Language preference and localized strings |
+| `TaskStore.swift` | Task operations and persistence |
+| `TodoTask.swift` | Task model and daily progress |
 
-Исходники приложения находятся в `NotchTasks/NotchTasks/`.
-Геометрия панели и анимации остаются внутри DynamicNotchKit.
+The panel shape and expansion animations remain inside DynamicNotchKit.
 
-## Проверки
+## Verification
 
-Три теста `NotchTasksTests` проверяют счётчик и разделение дат,
-обработку однострочного ввода и удаление, а также восстановление задач
-из файлового хранилища SwiftData после повторного открытия.
-
-Текущие тестовые targets настроены на **macOS 26.5+**.
-Для запуска тестов модели и хранилища:
+Three `TasksInNotchTests` tests cover daily progress and date separation, single-line input and deletion,
+and reopening a file-backed SwiftData store. Current test targets require **macOS 26.5+**.
 
 ```sh
 xcodebuild \
-  -project NotchTasks/NotchTasks.xcodeproj \
-  -scheme NotchTasks \
+  -project TasksInNotch/TasksInNotch.xcodeproj \
+  -scheme TasksInNotch \
   -destination 'platform=macOS' \
   -derivedDataPath .build/xcode \
-  -only-testing:NotchTasksTests \
+  -only-testing:TasksInNotchTests \
   -parallel-testing-enabled NO \
   test CODE_SIGN_IDENTITY=- CODE_SIGNING_ALLOWED=YES
 ```
 
-Наведение, раскрытие, передача клавиатурного фокуса и сворачивание проверяются
-в запущенном приложении. Шаблонные UI-тесты Xcode пока не покрывают взаимодействие с notch.
+Hover, click, keyboard focus, language switching, and collapse are checked in the running app.
+The original Xcode UI-test templates do not cover notch interactions yet.

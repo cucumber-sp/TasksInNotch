@@ -4,6 +4,7 @@ import SwiftUI
 
 @MainActor
 final class AppDelegate: NSObject, NSApplicationDelegate {
+    let language = LanguageSettings()
     private var store: TaskStore?
     private var notchController: NotchController?
     private var historyController: NSWindowController?
@@ -15,15 +16,15 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
             let container = try ModelContainer(for: TodoTask.self, configurations: configuration)
             let store = try TaskStore(container: container)
             self.store = store
-            let controller = NotchController(store: store) { [weak self] in self?.showHistory() }
+            let controller = NotchController(store: store, language: language) { [weak self] in self?.showHistory() }
             notchController = controller
             controller.start()
         } catch {
             NSApplication.shared.activate(ignoringOtherApps: true)
             let alert = NSAlert()
-            alert.messageText = "Не удалось открыть задачи"
+            alert.messageText = language.text("Unable to open tasks")
             alert.informativeText = error.localizedDescription
-            alert.addButton(withTitle: "Закрыть приложение")
+            alert.addButton(withTitle: language.text("Quit"))
             alert.runModal()
             NSApplication.shared.terminate(nil)
         }
@@ -53,8 +54,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
                 backing: .buffered,
                 defer: false
             )
-            window.title = "Мои задачи"
-            window.contentViewController = NSHostingController(rootView: HistoryView(store: store))
+            window.title = "TasksInNotch"
+            window.contentViewController = NSHostingController(rootView: HistoryView(store: store, language: language))
             window.contentMinSize = NSSize(width: 440, height: 380)
             window.isReleasedWhenClosed = false
             window.setFrameAutosaveName("TaskHistory")

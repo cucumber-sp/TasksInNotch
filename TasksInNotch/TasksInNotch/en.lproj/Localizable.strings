@@ -1,0 +1,24 @@
+/* TasksInNotch interface strings. */
+"Today's tasks" = "Today's tasks";
+"All tasks by date" = "All tasks by date";
+"Language" = "Language";
+"Quit TasksInNotch" = "Quit TasksInNotch";
+"My Tasks" = "My Tasks";
+"All tasks for today are complete" = "All tasks for today are complete";
+"Completed" = "Completed";
+"Not completed" = "Not completed";
+"Delete task" = "Delete task";
+"New task" = "New task";
+"Add task" = "Add task";
+"Unable to save changes" = "Unable to save changes";
+"OK" = "OK";
+"Your changes could not be saved." = "Your changes could not be saved.";
+"Previous day" = "Previous day";
+"Task date" = "Task date";
+"Next day" = "Next day";
+"Today" = "Today";
+"No tasks for this date" = "No tasks for this date";
+"Unable to open tasks" = "Unable to open tasks";
+"Quit" = "Quit";
+"Today's tasks: %@" = "Today's tasks: %@";
+"Completed %lld percent" = "Completed %lld percent";

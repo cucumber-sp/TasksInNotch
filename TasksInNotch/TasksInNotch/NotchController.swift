@@ -1,13 +1,22 @@
 import AppKit
+import Combine
 import DynamicNotchKit
+import Observation
 import SwiftUI
+
+@MainActor
+@Observable
+final class NotchHoverState {
+    var isHovering = false
+}
 
 /// Only controls interaction and focus. DynamicNotchKit owns the window,
 /// notch geometry, native hover feedback, and all expansion animations.
 @MainActor
 final class NotchController: NSObject, NSWindowDelegate {
-    private typealias Surface = DynamicNotch<NotchTasksView, CompactCountView, CompactProgressView>
+    private typealias Surface = DynamicNotch<TasksInNotchView, CompactCountView, CompactProgressView>
     private let notch: Surface
+    private var hoverUpdates: AnyCancellable?
     private var isExpanded = false
     private var transition: Task<Void, Never>?
     private var localClicks: Any?
@@ -18,16 +27,20 @@ final class NotchController: NSObject, NSWindowDelegate {
         NSScreen.screens.first(where: { $0.safeAreaInsets.top > 0 }) ?? NSScreen.main ?? NSScreen.screens.first
     }
 
-    init(store: TaskStore, showHistory: @escaping () -> Void) {
+    init(store: TaskStore, language: LanguageSettings, showHistory: @escaping () -> Void) {
+        let hover = NotchHoverState()
         notch = Surface(hoverBehavior: [.hapticFeedback, .increaseShadow], style: .auto) {
-            NotchTasksView(store: store, showHistory: showHistory)
+            TasksInNotchView(store: store, language: language, showHistory: showHistory)
         } compactLeading: {
-            CompactCountView(store: store)
+            CompactCountView(store: store, hover: hover, language: language)
         } compactTrailing: {
-            CompactProgressView(store: store)
+            CompactProgressView(store: store, hover: hover, language: language)
         }
         notch.transitionConfiguration = .init(skipIntermediateHides: true)
         super.init()
+        hoverUpdates = notch.$isHovering.removeDuplicates().sink { isHovering in
+            hover.isHovering = isHovering
+        }
     }
 
     func start() {
@@ -64,6 +77,7 @@ final class NotchController: NSObject, NSWindowDelegate {
 
     func stop() {
         transition?.cancel()
+        hoverUpdates?.cancel()
         if let localClicks { NSEvent.removeMonitor(localClicks) }
         if let globalClicks { NSEvent.removeMonitor(globalClicks) }
         if let screenChanges { NotificationCenter.default.removeObserver(screenChanges) }

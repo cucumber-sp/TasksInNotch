@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3A7EF5DD30711B01003AE888"
-               BuildableName = "NotchTasks.app"
-               BlueprintName = "NotchTasks"
-               ReferencedContainer = "container:NotchTasks.xcodeproj">
+               BuildableName = "TasksInNotch.app"
+               BlueprintName = "TasksInNotch"
+               ReferencedContainer = "container:TasksInNotch.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -36,9 +36,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3A7EF5EC30711B02003AE888"
-               BuildableName = "NotchTasksTests.xctest"
-               BlueprintName = "NotchTasksTests"
-               ReferencedContainer = "container:NotchTasks.xcodeproj">
+               BuildableName = "TasksInNotchTests.xctest"
+               BlueprintName = "TasksInNotchTests"
+               ReferencedContainer = "container:TasksInNotch.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3A7EF5F630711B02003AE888"
-               BuildableName = "NotchTasksUITests.xctest"
-               BlueprintName = "NotchTasksUITests"
-               ReferencedContainer = "container:NotchTasks.xcodeproj">
+               BuildableName = "TasksInNotchUITests.xctest"
+               BlueprintName = "TasksInNotchUITests"
+               ReferencedContainer = "container:TasksInNotch.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -70,9 +70,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3A7EF5DD30711B01003AE888"
-            BuildableName = "NotchTasks.app"
-            BlueprintName = "NotchTasks"
-            ReferencedContainer = "container:NotchTasks.xcodeproj">
+            BuildableName = "TasksInNotch.app"
+            BlueprintName = "TasksInNotch"
+            ReferencedContainer = "container:TasksInNotch.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -87,9 +87,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3A7EF5DD30711B01003AE888"
-            BuildableName = "NotchTasks.app"
-            BlueprintName = "NotchTasks"
-            ReferencedContainer = "container:NotchTasks.xcodeproj">
+            BuildableName = "TasksInNotch.app"
+            BlueprintName = "TasksInNotch"
+            ReferencedContainer = "container:TasksInNotch.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

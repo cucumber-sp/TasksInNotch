@@ -16,37 +16,37 @@
 			containerPortal = 3A7EF5D630711B01003AE888 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 3A7EF5DD30711B01003AE888;
-			remoteInfo = NotchTasks;
+			remoteInfo = TasksInNotch;
 		};
 		3A7EF5F830711B02003AE888 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3A7EF5D630711B01003AE888 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 3A7EF5DD30711B01003AE888;
-			remoteInfo = NotchTasks;
+			remoteInfo = TasksInNotch;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3A7EF5DE30711B01003AE888 /* NotchTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotchTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A7EF5ED30711B02003AE888 /* NotchTasksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotchTasksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A7EF5F730711B02003AE888 /* NotchTasksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotchTasksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A7EF5DE30711B01003AE888 /* TasksInNotch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TasksInNotch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A7EF5ED30711B02003AE888 /* TasksInNotchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TasksInNotchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A7EF5F730711B02003AE888 /* TasksInNotchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TasksInNotchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		3A7EF5E030711B01003AE888 /* NotchTasks */ = {
+		3A7EF5E030711B01003AE888 /* TasksInNotch */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = NotchTasks;
+			path = TasksInNotch;
 			sourceTree = "<group>";
 		};
-		3A7EF5F030711B02003AE888 /* NotchTasksTests */ = {
+		3A7EF5F030711B02003AE888 /* TasksInNotchTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = NotchTasksTests;
+			path = TasksInNotchTests;
 			sourceTree = "<group>";
 		};
-		3A7EF5FA30711B02003AE888 /* NotchTasksUITests */ = {
+		3A7EF5FA30711B02003AE888 /* TasksInNotchUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = NotchTasksUITests;
+			path = TasksInNotchUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -80,9 +80,9 @@
 		3A7EF5D530711B01003AE888 = {
 			isa = PBXGroup;
 			children = (
-				3A7EF5E030711B01003AE888 /* NotchTasks */,
-				3A7EF5F030711B02003AE888 /* NotchTasksTests */,
-				3A7EF5FA30711B02003AE888 /* NotchTasksUITests */,
+				3A7EF5E030711B01003AE888 /* TasksInNotch */,
+				3A7EF5F030711B02003AE888 /* TasksInNotchTests */,
+				3A7EF5FA30711B02003AE888 /* TasksInNotchUITests */,
 				3A7EF5DF30711B01003AE888 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,9 +90,9 @@
 		3A7EF5DF30711B01003AE888 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3A7EF5DE30711B01003AE888 /* NotchTasks.app */,
-				3A7EF5ED30711B02003AE888 /* NotchTasksTests.xctest */,
-				3A7EF5F730711B02003AE888 /* NotchTasksUITests.xctest */,
+				3A7EF5DE30711B01003AE888 /* TasksInNotch.app */,
+				3A7EF5ED30711B02003AE888 /* TasksInNotchTests.xctest */,
+				3A7EF5F730711B02003AE888 /* TasksInNotchUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,9 +100,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3A7EF5DD30711B01003AE888 /* NotchTasks */ = {
+		3A7EF5DD30711B01003AE888 /* TasksInNotch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3A7EF60130711B02003AE888 /* Build configuration list for PBXNativeTarget "NotchTasks" */;
+			buildConfigurationList = 3A7EF60130711B02003AE888 /* Build configuration list for PBXNativeTarget "TasksInNotch" */;
 			buildPhases = (
 				3A7EF5DA30711B01003AE888 /* Sources */,
 				3A7EF5DB30711B01003AE888 /* Frameworks */,
@@ -113,19 +113,19 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				3A7EF5E030711B01003AE888 /* NotchTasks */,
+				3A7EF5E030711B01003AE888 /* TasksInNotch */,
 			);
-			name = NotchTasks;
+			name = TasksInNotch;
 			packageProductDependencies = (
 				A17C00000000000000000002 /* DynamicNotchKit */,
 			);
-			productName = NotchTasks;
-			productReference = 3A7EF5DE30711B01003AE888 /* NotchTasks.app */;
+			productName = TasksInNotch;
+			productReference = 3A7EF5DE30711B01003AE888 /* TasksInNotch.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3A7EF5EC30711B02003AE888 /* NotchTasksTests */ = {
+		3A7EF5EC30711B02003AE888 /* TasksInNotchTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3A7EF60430711B02003AE888 /* Build configuration list for PBXNativeTarget "NotchTasksTests" */;
+			buildConfigurationList = 3A7EF60430711B02003AE888 /* Build configuration list for PBXNativeTarget "TasksInNotchTests" */;
 			buildPhases = (
 				3A7EF5E930711B02003AE888 /* Sources */,
 				3A7EF5EA30711B02003AE888 /* Frameworks */,
@@ -137,18 +137,18 @@
 				3A7EF5EF30711B02003AE888 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				3A7EF5F030711B02003AE888 /* NotchTasksTests */,
+				3A7EF5F030711B02003AE888 /* TasksInNotchTests */,
 			);
-			name = NotchTasksTests;
+			name = TasksInNotchTests;
 			packageProductDependencies = (
 			);
-			productName = NotchTasksTests;
-			productReference = 3A7EF5ED30711B02003AE888 /* NotchTasksTests.xctest */;
+			productName = TasksInNotchTests;
+			productReference = 3A7EF5ED30711B02003AE888 /* TasksInNotchTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		3A7EF5F630711B02003AE888 /* NotchTasksUITests */ = {
+		3A7EF5F630711B02003AE888 /* TasksInNotchUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3A7EF60730711B02003AE888 /* Build configuration list for PBXNativeTarget "NotchTasksUITests" */;
+			buildConfigurationList = 3A7EF60730711B02003AE888 /* Build configuration list for PBXNativeTarget "TasksInNotchUITests" */;
 			buildPhases = (
 				3A7EF5F330711B02003AE888 /* Sources */,
 				3A7EF5F430711B02003AE888 /* Frameworks */,
@@ -160,13 +160,13 @@
 				3A7EF5F930711B02003AE888 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				3A7EF5FA30711B02003AE888 /* NotchTasksUITests */,
+				3A7EF5FA30711B02003AE888 /* TasksInNotchUITests */,
 			);
-			name = NotchTasksUITests;
+			name = TasksInNotchUITests;
 			packageProductDependencies = (
 			);
-			productName = NotchTasksUITests;
-			productReference = 3A7EF5F730711B02003AE888 /* NotchTasksUITests.xctest */;
+			productName = TasksInNotchUITests;
+			productReference = 3A7EF5F730711B02003AE888 /* TasksInNotchUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -192,11 +192,12 @@
 					};
 				};
 			};
-			buildConfigurationList = 3A7EF5D930711B01003AE888 /* Build configuration list for PBXProject "NotchTasks" */;
+			buildConfigurationList = 3A7EF5D930711B01003AE888 /* Build configuration list for PBXProject "TasksInNotch" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				ru,
 				Base,
 			);
 			mainGroup = 3A7EF5D530711B01003AE888;
@@ -209,9 +210,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3A7EF5DD30711B01003AE888 /* NotchTasks */,
-				3A7EF5EC30711B02003AE888 /* NotchTasksTests */,
-				3A7EF5F630711B02003AE888 /* NotchTasksUITests */,
+				3A7EF5DD30711B01003AE888 /* TasksInNotch */,
+				3A7EF5EC30711B02003AE888 /* TasksInNotchTests */,
+				3A7EF5F630711B02003AE888 /* TasksInNotchUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -267,12 +268,12 @@
 /* Begin PBXTargetDependency section */
 		3A7EF5EF30711B02003AE888 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3A7EF5DD30711B01003AE888 /* NotchTasks */;
+			target = 3A7EF5DD30711B01003AE888 /* TasksInNotch */;
 			targetProxy = 3A7EF5EE30711B02003AE888 /* PBXContainerItemProxy */;
 		};
 		3A7EF5F930711B02003AE888 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3A7EF5DD30711B01003AE888 /* NotchTasks */;
+			target = 3A7EF5DD30711B01003AE888 /* TasksInNotch */;
 			targetProxy = 3A7EF5F830711B02003AE888 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -412,7 +413,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Notch Tasks";
+				INFOPLIST_KEY_CFBundleDisplayName = "TasksInNotch";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -447,7 +448,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Notch Tasks";
+				INFOPLIST_KEY_CFBundleDisplayName = "TasksInNotch";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -478,14 +479,14 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 26.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cucumberspace.NotchTasksTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cucumberspace.TasksInNotchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NotchTasks.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NotchTasks";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TasksInNotch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TasksInNotch";
 			};
 			name = Debug;
 		};
@@ -499,14 +500,14 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 26.5;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cucumberspace.NotchTasksTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cucumberspace.TasksInNotchTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NotchTasks.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NotchTasks";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TasksInNotch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TasksInNotch";
 			};
 			name = Release;
 		};
@@ -518,14 +519,14 @@
 				DEVELOPMENT_TEAM = LUJJS9XSY6;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cucumberspace.NotchTasksUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cucumberspace.TasksInNotchUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = NotchTasks;
+				TEST_TARGET_NAME = TasksInNotch;
 			};
 			name = Debug;
 		};
@@ -537,21 +538,21 @@
 				DEVELOPMENT_TEAM = LUJJS9XSY6;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cucumberspace.NotchTasksUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cucumberspace.TasksInNotchUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = NotchTasks;
+				TEST_TARGET_NAME = TasksInNotch;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3A7EF5D930711B01003AE888 /* Build configuration list for PBXProject "NotchTasks" */ = {
+		3A7EF5D930711B01003AE888 /* Build configuration list for PBXProject "TasksInNotch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A7EF5FF30711B02003AE888 /* Debug */,
@@ -560,7 +561,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3A7EF60130711B02003AE888 /* Build configuration list for PBXNativeTarget "NotchTasks" */ = {
+		3A7EF60130711B02003AE888 /* Build configuration list for PBXNativeTarget "TasksInNotch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A7EF60230711B02003AE888 /* Debug */,
@@ -569,7 +570,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3A7EF60430711B02003AE888 /* Build configuration list for PBXNativeTarget "NotchTasksTests" */ = {
+		3A7EF60430711B02003AE888 /* Build configuration list for PBXNativeTarget "TasksInNotchTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A7EF60530711B02003AE888 /* Debug */,
@@ -578,7 +579,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3A7EF60730711B02003AE888 /* Build configuration list for PBXNativeTarget "NotchTasksUITests" */ = {
+		3A7EF60730711B02003AE888 /* Build configuration list for PBXNativeTarget "TasksInNotchUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A7EF60830711B02003AE888 /* Debug */,
