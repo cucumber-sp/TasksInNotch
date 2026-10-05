@@ -94,6 +94,10 @@ Sources are under `TasksInNotch/TasksInNotch/`.
 
 The panel shape and expansion animations remain inside DynamicNotchKit.
 
+The main app icon is `TasksInNotch/TasksInNotch/tasksinnotch.icon`, an editable
+[Icon Composer](https://developer.apple.com/documentation/xcode/creating-your-app-icon-using-icon-composer)
+document. The App Icon build setting is `tasksinnotch` in both Debug and Release.
+
 ## Verification
 
 Three `TasksInNotchTests` tests cover daily progress and date separation, single-line input and deletion,

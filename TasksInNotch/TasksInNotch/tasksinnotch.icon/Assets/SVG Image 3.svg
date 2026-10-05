@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none" role="img" aria-labelledby="title description">
+  <title id="title">TasksInNotch</title>
+  <desc id="description">A single static progress arc with a checkmark on a transparent background.</desc>
+  <path id="progress" d="M256 72 A184 184 0 1 1 107.141 364.152 A18 18 0 0 1 136.265 342.992 A148 148 0 1 0 256 108 A18 18 0 0 1 256 72 Z" fill="#9CCAAB"/>
+  <path id="checkmark" d="M174 260 L232 318 L340 210" stroke="#9CCAAB" stroke-width="38" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

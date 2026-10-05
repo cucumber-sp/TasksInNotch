@@ -95,6 +95,10 @@ CloudKit отключён; аккаунт и сервер не требуютс�
 
 Геометрия и анимации раскрытия остаются внутри DynamicNotchKit.
 
+Основная иконка — `TasksInNotch/TasksInNotch/tasksinnotch.icon`, редактируемый файл
+[Icon Composer](https://developer.apple.com/documentation/xcode/creating-your-app-icon-using-icon-composer).
+В Debug и Release настройка App Icon указывает на `tasksinnotch`.
+
 ## Проверки
 
 Три теста `TasksInNotchTests` проверяют прогресс и разделение дат, однострочный ввод и удаление,
